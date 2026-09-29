@@ -29,7 +29,8 @@ public class SupporterManager<T extends IScannerManager> {
     public enum ScannerSupporter {
         SUNMI("SUNMI"), alps("alps"), SEUIC("SEUIC"), UBX("UBX"), OTHER("OTHER"), idata("idata"),
         SG6900("SG6900"), HT380K("HT380K"), MT6210("NLS-MT6210"), MT9210("NLS-MT9210"),
-        MT90("NLS-MT90"), MT66("NLS-MT66"), PDA("PDA"), PDT90F("PDT-90F"), T1("T1"),Urovo("Urovo");
+        MT90("NLS-MT90"), MT66("NLS-MT66"), PDA("PDA"), PDT90F("PDT-90F"), T1("T1"),Urovo("Urovo"),
+        ,UROVO("UROVO");
 
         private String name;
 
@@ -83,6 +84,7 @@ public class SupporterManager<T extends IScannerManager> {
                 break;
             case UBX:
             case Urovo:
+            case UROVO:
                 scannerManager = (T) UBXScannerManager.getInstance(context);
                 break;
             case idata:
